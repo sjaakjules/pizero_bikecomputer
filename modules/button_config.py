@@ -133,6 +133,20 @@ class Button_Config:
                 20: ("press_tab", "back_menu"),
             },
         },
+        "HATMini": {
+            "MAIN": {
+                5: ("scroll_prev", ""),  # A
+                6: ("count_laps", "reset_count"),  # B
+                16: ("start_and_stop_manual", ""),  # X
+                24: ("scroll_next", "enter_menu"),  # Y
+            },
+            "MENU": {
+                5: ("back_menu", ""),
+                6: ("press_space", ""),
+                16: ("press_shift_tab", ""),
+                24: ("press_tab", ""),
+            },
+        }
     }
 
     G_PAGE_MODE = "MAIN"

@@ -1,8 +1,8 @@
 import time
 
 from logger import app_logger
-from .sensor import Sensor
 
+from .sensor import Sensor
 
 # GPIO Button
 _SENSOR_RPiGPIO = False
@@ -29,13 +29,14 @@ class SensorGPIO(Sensor):
             "PiTFT",
             "Papirus",
             "DFRobot_RPi_Display",
+            "HatMini"
         ]:
             for key in self.config.button_config.G_BUTTON_DEF[self.config.G_DISPLAY][
                 "MAIN"
             ].keys():
                 self.buttonState[key] = False
                 self.oldButtonState[key] = True
-                if self.config.G_DISPLAY in ["PiTFT", "DFRobot_RPi_Display"]:
+                if self.config.G_DISPLAY in ["PiTFT", "DFRobot_RPi_Display","HATMini"]:
                     GPIO.setup(key, GPIO.IN, pull_up_down=GPIO.PUD_UP)
                 elif self.config.G_DISPLAY in ["Papirus"]:
                     GPIO.setup(key, GPIO.IN)
@@ -66,6 +67,7 @@ class SensorGPIO(Sensor):
             "PiTFT",
             "Papirus",
             "DFRobot_RPi_Display",
+            "HATMini"
         ]:
             for key in self.config.button_config.G_BUTTON_DEF[self.config.G_DISPLAY][
                 "MAIN"

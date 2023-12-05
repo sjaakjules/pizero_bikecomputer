@@ -174,11 +174,18 @@ $ sudo pip3 install adafruit-circuitpython-bmp280
 | [ozzmaker](https://ozzmaker.com) | [Berry GPS IMU v4](https://ozzmaker.com/product/berrygps-imu/) | adafruit-circuitpython-lsm6ds adafruit-circuitpython-lis3mdl |
 | [GPS PIE](https://gps-pie.com/) | [GPS PIE](https://gps-pie.com/) | adafruit-circuitpython-bno055(*2) |
 | [waveshare](https://www.waveshare.com/) | [Environment Sensor HAT](https://www.waveshare.com/environment-sensor-hat.htm) | adafruit-circuitpython-bme280 adafruit-circuitpython-icm20x adafruit-circuitpython-tsl2591 adafruit-circuitpython-ltr390 adafruit-circuitpython-sgp40 |
+| Pimoroni | [Display HAT Mini](https://github.com/pimoroni/st7789-python/tree/master)| displayhatmini st7789 |
+| IMU | [MPU-6050](https://pypi.org/project/mpu6050-raspberrypi/) | mpu6050-raspberrypi|
+| Adafruit | [HMC5883L](https://www.instructables.com/Interfacing-Digital-Compass-HMC5883L-with-Raspberr/) | (*3) |
+| Adafruit | [BME680](https://github.com/adafruit/Adafruit_CircuitPython_BME680) | adafruit-circuitpython-bme680 |
+| Adafruit | [TSL2591](https://github.com/adafruit/Adafruit_CircuitPython_TSL2591) | adafruit-circuitpython-tsl2591 |
+
 
 *1 Install manually https://github.com/spacecraft-design-lab-2019/CircuitPython_BMX160
 
 *2 You must enable i2c slowdown. Follow [the adafruit guide](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/i2c-clock-stretching).
 
+*3 You need to install quick2wire, i2clibraries from git clone and setting venv path. [Tutorial for HMC5883L sensor](https://www.instructables.com/Interfacing-Digital-Compass-HMC5883L-with-Raspberr/)
 
 If you want to get a more accurate direction with the geomagnetic sensor, install a package that corrects the geomagnetic declination.
 

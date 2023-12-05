@@ -1,6 +1,6 @@
+import asyncio
 import datetime
 import math
-import asyncio
 
 import numpy as np
 
@@ -8,6 +8,7 @@ from logger import app_logger
 from modules.utils.filters import KalmanFilter, KalmanFilter_pitch
 from modules.utils.geo import get_track_str
 from modules.utils.network import detect_network
+
 from .sensor import Sensor
 
 # I2C
@@ -1194,9 +1195,9 @@ class SensorI2C(Sensor):
 
     def detect_pressure_bmp280(self):
         try:
+            import adafruit_bmp280
             import board
             import busio
-            import adafruit_bmp280
 
             i2c = busio.I2C(board.SCL, board.SDA)
             # device test
@@ -1228,8 +1229,8 @@ class SensorI2C(Sensor):
 
     def detect_pressure_lps3xhw(self):
         try:
-            import board
             import adafruit_lps35hw
+            import board
 
             # device test
             self.sensor_lps35hw = adafruit_lps35hw.LPS35HW(board.I2C())
@@ -1311,9 +1312,9 @@ class SensorI2C(Sensor):
 
     def detect_motion_lsm6ds(self):
         try:
+            import adafruit_lsm6ds.lsm6ds33
             import board
             import busio
-            import adafruit_lsm6ds.lsm6ds33
 
             try:
                 self.sensor_lsm6ds = adafruit_lsm6ds.lsm6ds33.LSM6DS33(
@@ -1337,9 +1338,9 @@ class SensorI2C(Sensor):
 
     def detect_motion_ism330dhcx(self):
         try:
+            import adafruit_lsm6ds.ism330dhcx
             import board
             import busio
-            import adafruit_lsm6ds.ism330dhcx
 
             try:
                 self.sensor_ism330dhcx = adafruit_lsm6ds.ism330dhcx.ISM330DHCX(
@@ -1364,9 +1365,9 @@ class SensorI2C(Sensor):
 
     def detect_motion_lis3mdl(self):
         try:
+            import adafruit_lis3mdl
             import board
             import busio
-            import adafruit_lis3mdl
 
             self.sensor_lis3mdl = adafruit_lis3mdl.LIS3MDL(
                 busio.I2C(board.SCL, board.SDA)
@@ -1401,9 +1402,9 @@ class SensorI2C(Sensor):
 
     def detect_motion_lsm9ds1(self):
         try:
+            import adafruit_lsm9ds1
             import board
             import busio
-            import adafruit_lsm9ds1
 
             # self.sensor_lsm9ds1 = adafruit_lsm9ds1.LSM9DS1_I2C(busio.I2C(board.SCL, board.SDA),mag_address=0x1C, xg_address=0x6A)
             self.sensor_lsm9ds1 = adafruit_lsm9ds1.LSM9DS1_I2C(
@@ -1415,9 +1416,9 @@ class SensorI2C(Sensor):
 
     def detect_motion_bmx160(self):
         try:
+            import BMX160
             import board
             import busio
-            import BMX160
 
             self.sensor_bmx160 = BMX160.BMX160_I2C(busio.I2C(board.SCL, board.SDA))
             self.sensor_bmx160.accel_range = BMX160.BMX160_ACCEL_RANGE_2G
@@ -1429,9 +1430,9 @@ class SensorI2C(Sensor):
 
     def detect_motion_bno055(self):
         try:
+            import adafruit_bno055
             import board
             import busio
-            import adafruit_bno055
 
             self.sensor_bno055 = adafruit_bno055.BNO055_I2C(
                 busio.I2C(board.SCL, board.SDA)
@@ -1442,9 +1443,9 @@ class SensorI2C(Sensor):
 
     def detect_motion_icm20948(self):
         try:
+            import adafruit_icm20x
             import board
             import busio
-            import adafruit_icm20x
 
             # for Waveshare Environment Sensor HAT
             self.sensor_icm20948 = adafruit_icm20x.ICM20948(
@@ -1467,9 +1468,9 @@ class SensorI2C(Sensor):
 
     def detect_light_vncl4040(self):
         try:
+            import adafruit_vcnl4040
             import board
             import busio
-            import adafruit_vcnl4040
 
             self.sensor_vcnl4040 = adafruit_vcnl4040.VCNL4040(
                 busio.I2C(board.SCL, board.SDA)
@@ -1482,9 +1483,9 @@ class SensorI2C(Sensor):
 
     def detect_light_tsl2591(self):
         try:
+            import adafruit_tsl2591
             import board
             import busio
-            import adafruit_tsl2591
 
             self.sensor_tsl2591 = adafruit_tsl2591.TSL2591(
                 busio.I2C(board.SCL, board.SDA)
@@ -1501,9 +1502,9 @@ class SensorI2C(Sensor):
 
     def detect_light_ltr390(self):
         try:
+            import adafruit_ltr390
             import board
             import busio
-            import adafruit_ltr390
 
             self.sensor_ltr390 = adafruit_ltr390.LTR390(busio.I2C(board.SCL, board.SDA))
             # self.sensor_ltr390.resolution = adafruit_ltr390.Resolution.RESOLUTION_16BIT
@@ -1519,9 +1520,9 @@ class SensorI2C(Sensor):
 
     def detect_gas_sgp40(self):
         try:
+            import adafruit_sgp40
             import board
             import busio
-            import adafruit_sgp40
 
             self.sensor_sgp40 = adafruit_sgp40.SGP40(busio.I2C(board.SCL, board.SDA))
             # device test

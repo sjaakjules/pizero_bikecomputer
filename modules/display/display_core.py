@@ -14,6 +14,7 @@ SUPPORTED_DISPLAYS = {
     "MIP_Sharp_320": (320, 240),
     "Papirus": None,
     "DFRobot_RPi_Display": None,
+    "HATMini" : (320, 240),
 }
 
 
@@ -145,5 +146,11 @@ def init_display(config):
 
         if _SENSOR_DISPLAY:
             display = DFRobotRPiDisplay(config)
+    elif config.G_DISPLAY == "HATMini":
+        from .displayHATMini import _SENSOR_DISPLAY, DisplayHATMini
+
+        if _SENSOR_DISPLAY:
+            display = DisplayHATMini(config)
+
 
     return display

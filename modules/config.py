@@ -415,7 +415,7 @@ class Config:
     G_FULLSCREEN = False
 
     # display type (overwritten with setting.conf)
-    G_DISPLAY = "None"  # PiTFT, MIP, MIP_640, Papirus, MIP_Sharp, MIP_Sharp_320, DFRobot_RPi_Display
+    G_DISPLAY = "None"  # PiTFT, MIP, MIP_640, Papirus, MIP_Sharp, MIP_Sharp_320, DFRobot_RPi_Display, HATMini
 
     G_DISPLAY_PARAM = {
         "SPI_CLOCK": 2000000,
